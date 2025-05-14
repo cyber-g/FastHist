@@ -1,3 +1,6 @@
+# Demo data files
+signal/
+
 # Prerequisites
 *.d
 
@@ -6,6 +9,7 @@
 *.ko
 *.obj
 *.elf
+*.mexa64
 
 # Linker output
 *.ilk
