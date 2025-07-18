@@ -24,7 +24,7 @@
 %------------- BEGIN CODE --------------
 
 % Equality check
-check_equal_flag = false; % Set to true to check equality of the results
+check_equal_flag = true; % Set to true to check equality of the results
 
 signal_option = 1;
 switch signal_option
@@ -78,6 +78,11 @@ hist_int_counts = hist_int(abs(signal), extrema, num_bins);
 disp('hist_int:');
 timeit(@() hist_int(abs(signal), extrema, num_bins)) % Measure the time taken
 
+% Use the hist_int_simpler function
+hist_int_simpler_counts = hist_int_simpler(abs(signal), extrema, num_bins);
+disp('hist_int_simpler:');
+timeit(@() hist_int_simpler(abs(signal), extrema, num_bins)) % Measure the time taken
+
 % use the hist_accumarray function
 hist_accumarray_counts = hist_accumarray(abs(signal), extrema, num_bins);
 disp('hist_accumarray:');
@@ -97,6 +102,7 @@ timeit(@() hist_int_mex_openmp(abs(signal), extrema, num_bins)) % Measure the ti
 if check_equal_flag
     % Check if the results are equal
     assert(isequal(histcounts_counts, hist_int_counts), 'histcounts and hist_int results are not equal');
+    assert(isequal(histcounts_counts, hist_int_simpler_counts), 'histcounts and hist_int_simpler results are not equal');
     assert(isequal(histcounts_counts, hist_accumarray_counts), 'histcounts and hist_accumarray results are not equal');
     assert(isequal(histcounts_counts, hist_int_mex_counts), 'histcounts and hist_int_mex results are not equal');
     assert(isequal(histcounts_counts, hist_int_mex_openmp_counts), 'histcounts and hist_int_mex_openmp results are not equal');
