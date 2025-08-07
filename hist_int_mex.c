@@ -2,6 +2,7 @@
  * File: hist_int_mex.c
  * Project: FastHist (https://github.com/cyber-g/FastHist)
  * Author: Germain PHAM
+ * Affiliation: C2S, Télécom Paris, IP Paris
  * Date: 14th May 2025
  * 
  * Description:

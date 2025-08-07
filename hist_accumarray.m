@@ -31,8 +31,11 @@ function counts = hist_accumarray(input, extrema, num_bins)
 %    (https://www.mathworks.com/matlabcentral/fileexchange/4908-m-file-header-template),
 %    MATLAB Central File Exchange. Accessed on April 26, 2025. 
 % 
+% License:
+%    GNU General Public License v3.0 (GPL-3.0)
+% 
 % Author: Germain PHAM
-% C2S, Télécom ParisTech, IP Paris
+% C2S, Télécom Paris, IP Paris
 % email: dpham@telecom-paris.fr
 % May 2025; Last revision: 
 
